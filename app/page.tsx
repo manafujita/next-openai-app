@@ -60,7 +60,7 @@ export default function Chat() {
                         ))
                       : null}
                 </div>
-                <div className="w-100 mt-[10px] text-black">
+                <div className="w-100 mt-[10px] text-black">                    
                     <div className="relative">
                         {/* <input type="text" className="block w-full p-4 text-sm text-black rounded-lg bg-white border-0 outline-none" placeholder="質問"/> */}
                         <div className='relative'>
@@ -76,7 +76,7 @@ export default function Chat() {
                             width={28}
                             height={28}
                             alt=""
-							onClick={handleSubmit}
+                            onClick={(e)=>handleSubmit(e as any)}
                         />
                         </div>
                     </div>
