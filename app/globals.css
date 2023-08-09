@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.chatdlg {
+    right: -100%;
+    transition: right 0.5s ease-out;
+}
+
+.chatdlg.active {
+    right: 2%;
+    transition: right 0.5s ease-out;
+}
+
+.chatbtn {
+    right: -100%;
+    transition: right 0.5s ease-out;
+}
+
+.chatbtn.active {
+    right: 2%;
+    transition: right 0.5s ease-out;
+}
+
+@media(min-width: 640px) {
+    .chatdlg {
+        right: -100%;
+        transition: right 0.5s ease-out;
+    }
+    
+    .chatdlg.active {
+        right: 20px;
+        transition: right 0.5s ease-out;
+    }
+    
+    .chatbtn {
+        right: -100%;
+        transition: right 0.5s ease-out;
+    }
+    
+    .chatbtn.active {
+        right: 20px;
+        transition: right 0.5s ease-out;
+    }
+}
