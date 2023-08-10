@@ -10,7 +10,7 @@ export default function Chat() {
     const [isActive, setIsActive] = useState(false);
     const [isModalVisible, setModalVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [imageSrc, setImageSrc] = useState("/path/to/desktop/image.jpg");
+    const [imageSrc, setImageSrc] = useState("/images/banner/02.png");
 
     const toggleClass = () => {
         setIsActive(!isActive);
@@ -132,7 +132,7 @@ export default function Chat() {
                                     onChange={handleInputChange}
                                 />
                                 <Image
-                                    className="cursor-pointer absolute right-[20px] bottom-[15px]"
+                                    className="cursor-pointer absolute right-[20px] bottom-[25px]"
                                     src="/images/icons/submit.png"
                                     width={28}
                                     height={28}
