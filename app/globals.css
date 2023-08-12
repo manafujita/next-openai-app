@@ -9,7 +9,7 @@
 
 .chatdlg.active {
     right: 2%;
-    animation: fadeIn 0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+    animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 
 .chatbtn {
