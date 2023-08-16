@@ -8,12 +8,15 @@ import Link from "next/link";
 export default function Chat() {
     const { messages, input, handleInputChange, handleSubmit } = useChat();
     const [isActive, setIsActive] = useState(false);
+    const [isAnimation, setIsAnimation] = useState(false);
     const [isModalVisible, setModalVisible] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [imageSrc, setImageSrc] = useState("/images/banner/02.png");
+    const chatHistoryRef = useRef<HTMLDivElement>(null);
 
     const toggleClass = () => {
         setIsActive(!isActive);
+        setIsAnimation(true);
     };
 
     useEffect(() => {
@@ -22,7 +25,7 @@ export default function Chat() {
             element.scrollTop = element.scrollHeight;
         }
 
-        if (window.innerWidth <= 768) { 
+        if (window.innerWidth <= 768) {
             setIsMobile(true);
         }
 
@@ -39,7 +42,26 @@ export default function Chat() {
         window.addEventListener('resize', handleResize);
     });
 
-    const chatHistoryRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function sendDimensions() {
+            // Get content dimensions
+            let height = "70px";
+            let width = "180px";
+            if(isActive) {
+                if(isMobile) {
+                    width = "90%";
+                    height = "100vh";
+                } else {
+                    width = "446px";
+                    height = "720px";
+                }
+            }
+            // Send dimensions to parent
+            window.parent.postMessage({ width, height, isActive }, "*");
+        }
+    
+        sendDimensions();
+    }, [isActive]);
 
     const handleImageClick = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -58,9 +80,9 @@ export default function Chat() {
     };
 
     return (
-        <>
+        <div>
             <div
-                className={`fixed bottom-[20px] max-w-[96%] sm:max-w-[450px] bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
+                className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
                     }`}
             >
                 <div className="w-100 relative">
@@ -100,7 +122,7 @@ export default function Chat() {
                         </div>
                     </div>
                     <div
-                        className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] h-[40vh] sm:h-[400px] overflow-y-auto border border-2"
+                        className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] h-[38vh] sm:h-[51vh] overflow-y-auto border border-2"
                         ref={chatHistoryRef}
                     >
                         <div className="max-w-[300px] bg-[#2E63A5] px-[15px] py-[10px] rounded-r-[10px] rounded-b-[10px] text-[13px] mb-[15px]">
@@ -147,18 +169,18 @@ export default function Chat() {
                             専門スタッフへの無料相談・無料カウンセリングはこちらから
                         </p>
                         <div className="mt-[5px] flex justify-between items-center">
-                            <Link href={"https://www.ueno.co.jp/soudan/ueno/"}>
+                            <Link href={"https://www.ueno.co.jp/soudan/ueno/"} target="_blank">
                                 <Image
-                                    className="cursor-pointer"
+                                    className="cursor-pointer h-[9.5vh] sm:h-[82px] w-auto"
                                     src="/images/banner/01.png"
                                     width={135}
                                     height={80}
                                     alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                 />
                             </Link>
-                            <Link href="tel:0120-518-550">
+                            <Link href="#">
                                 <Image
-                                    className="cursor-pointer"
+                                    className="cursor-pointer h-[9.5vh] sm:h-[82px] w-auto"
                                     src={imageSrc}
                                     width={160}
                                     height={80}
@@ -166,9 +188,9 @@ export default function Chat() {
                                     onClick={handleImageClick}
                                 />
                             </Link>
-                            <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"}>
+                            <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
                                 <Image
-                                    className="cursor-pointer"
+                                    className="cursor-pointer h-[9.5vh] sm:h-[82px] w-auto"
                                     src="/images/banner/03.png"
                                     width={125}
                                     height={80}
@@ -181,8 +203,9 @@ export default function Chat() {
             </div>
 
             <div
-                className={`fixed w-[180px] bottom-[20px] chatbtn ${isActive ? "" : "active"
-                    }`}
+                className={`fixed w-[180px] bottom-[0px] chatbtn ${isActive ? "" : "active"
+                    } ${isAnimation ? "animation" : ""
+                }`}
             >
                 <Image
                     className="cursor-pointer"
@@ -204,7 +227,7 @@ export default function Chat() {
                             <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     <div className="flex justify-center">
-                                        <Link href="tel:0120-518-550" className="flex justify-center text-sky-500">
+                                        <Link href="tel:0120-965-982" className="flex justify-center text-sky-500">
                                             <Image
                                                 className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                 src="/images/icons/phone-solid.png"
@@ -212,7 +235,7 @@ export default function Chat() {
                                                 height={20}
                                                 alt="AIドクター うえの君"
                                             />
-                                            発信 0120-518-550
+                                            発信 0120-965-982
                                         </Link>
                                     </div>
                                     <button type="button" onClick={() => setModalVisible(false)} className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">キャンセル</button>
@@ -222,6 +245,6 @@ export default function Chat() {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }

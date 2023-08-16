@@ -8,7 +8,7 @@
 }
 
 .chatdlg.active {
-    right: 2%;
+    right: 0;
     animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 
@@ -17,24 +17,31 @@
 }
 
 .chatbtn.active {
-    right: 2%;
+    right: 0;
+    /* animation: shrinkToRightSP 0.2s forwards; */
+}
+
+.chatbtn.active.animation {
     animation: shrinkToRightSP 0.2s forwards;
 }
 
 @media(min-width: 640px) {
     .chatdlg {
-        right: 20px;
+        right: 0;
         opacity: 0;
         animation: slideOut 0s forwards;
     }
 
     .chatdlg.active {
-        right: 20px;
+        right: 0;
         animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
     }
 
     .chatbtn.active {
-        right: 20px;
+        right: 0;
+    }
+
+    .chatbtn.active.animation {
         animation: shrinkToRightPC 0.2s forwards;
     }
 }
@@ -60,29 +67,17 @@
         opacity: 1;
         height: 750px;
         bottom: 20px;
-        /* transform: translateX(0); */
     }
 
     90% {
         height: 1px;
         width: 100%;
-        /* Maintain the initial width at this point */
     }
 
     100% {
         height: 0;
         width: 0;
         bottom: 20px;
-    }
-}
-
-@keyframes hideBtn {
-    0% {
-        width: 450px;
-    }
-
-    100% {
-        width: 180px;
     }
 }
 

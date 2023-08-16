@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="http://localhost:3000" frameborder="0"></iframe>
+
+    <script>
+        window.addEventListener("message", function (event) {
+            if (event.data && event.data.width && event.data.height) {
+                const iframe = document.querySelector('iframe[src="http://localhost:3000"]');
+                if (iframe) {
+                    if(event.data.isActive == false) {
+                        setTimeout(function() {
+                            iframe.style.width = event.data.width;
+                            iframe.style.height = event.data.height;
+                        }, 200);
+                    } else {
+                        iframe.style.width = event.data.width;
+                        iframe.style.height = event.data.height;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
