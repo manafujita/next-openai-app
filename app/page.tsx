@@ -70,6 +70,7 @@ export default function Chat() {
                             src="/images/icons/close.png"
                             width={20}
                             height={20}
+                            quality={100}
                             alt="AIドクター うえの君"
                             onClick={toggleClass}
                         />
@@ -80,6 +81,7 @@ export default function Chat() {
                                     src="/images/logo/logo-img.png"
                                     width={80}
                                     height={80}
+                                    quality={100}
                                     alt="AIドクター うえの君"
                                 />
                             </div>
@@ -89,6 +91,7 @@ export default function Chat() {
                                     src="/images/logo/logo-text.png"
                                     width={225}
                                     height={30}
+                                    quality={100}
                                     alt="AIドクター うえの君"
                                 />
                                 <p className="text-[14px]">
@@ -138,6 +141,7 @@ export default function Chat() {
                                         width={28}
                                         height={28}
                                         alt=""
+                                        quality={100}
                                         onClick={(e) => handleSubmit(e as any)}
                                     />
                                 </div>
@@ -154,6 +158,7 @@ export default function Chat() {
                                         src="/images/banner/01.png"
                                         width={135}
                                         height={80}
+                                        quality={100}
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
@@ -163,6 +168,7 @@ export default function Chat() {
                                         src="/images/banner/02.png"
                                         width={160}
                                         height={80}
+                                        quality={100}
                                         alt="24時間無料電話相談　予約ダイヤル　0120-518-550"
                                     />
                                 </div>
@@ -172,6 +178,7 @@ export default function Chat() {
                                         src="/images/banner/03.png"
                                         width={125}
                                         height={80}
+                                        quality={100}
                                         alt="各医院での無料カウンセリング　メール予約"
                                     />
                                 </Link>
@@ -191,6 +198,7 @@ export default function Chat() {
                         src="/images/common/fix-btn.png"
                         width={180}
                         height={70}
+                        quality={100}
                         alt="AIドクター うえの君"
                         onClick={toggleClass}
                     />
@@ -212,6 +220,7 @@ export default function Chat() {
                             src="/images/icons/close.png"
                             width={20}
                             height={20}
+                            quality={100}
                             alt="AIドクター うえの君"
                             onClick={toggleClass}
                         />
@@ -222,6 +231,7 @@ export default function Chat() {
                                     src="/images/logo/logo-img.png"
                                     width={70}
                                     height={70}
+                                    quality={100}
                                     alt="AIドクター うえの君"
                                 />
                             </div>
@@ -231,6 +241,7 @@ export default function Chat() {
                                     src="/images/logo/logo-text.png"
                                     width={180}
                                     height={20}
+                                    quality={100}
                                     alt="AIドクター うえの君"
                                 />
                                 <p className="text-[14px]">
@@ -280,6 +291,7 @@ export default function Chat() {
                                         width={28}
                                         height={28}
                                         alt=""
+                                        quality={100}
                                         onClick={(e) => handleSubmit(e as any)}
                                     />
                                 </div>
@@ -296,6 +308,7 @@ export default function Chat() {
                                         src="/images/banner/01.png"
                                         width={135}
                                         height={80}
+                                        quality={100}
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
@@ -305,6 +318,7 @@ export default function Chat() {
                                         src="/images/banner/02.png"
                                         width={160}
                                         height={80}
+                                        quality={100}
                                         alt="24時間無料電話相談　予約ダイヤル　0120-518-550"
                                     />
                                 </div>
@@ -314,6 +328,7 @@ export default function Chat() {
                                         src="/images/banner/03.png"
                                         width={125}
                                         height={80}
+                                        quality={100}
                                         alt="各医院での無料カウンセリング　メール予約"
                                     />
                                 </Link>
@@ -333,6 +348,7 @@ export default function Chat() {
                         src="/images/common/fix-btn.png"
                         width={180}
                         height={70}
+                        quality={100}
                         alt="AIドクター うえの君"
                         onClick={toggleClass}
                     />
@@ -354,6 +370,7 @@ export default function Chat() {
                                                     src="/images/icons/phone-solid.png"
                                                     width={20}
                                                     height={20}
+                                                    quality={100}
                                                     alt="AIドクター うえの君"
                                                 />
                                                 発信 0120-965-982
