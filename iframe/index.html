@@ -14,26 +14,59 @@
             padding: 0;
             margin: 0;
             overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .sp-iframe {
+            display: none;
+        }
+
+        @media(max-width: 450px) {
+            .pc-iframe {
+                display: none;
+            }
+
+            .sp-iframe {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
-    <iframe src="http://localhost:3000" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000?type=pc" frameborder="0" class="pc-iframe"></iframe>
+    <iframe src="http://localhost:3000?type=sp" frameborder="0" class="sp-iframe"></iframe>
 
     <script>
         window.addEventListener("message", function (event) {
             if (event.data && event.data.width && event.data.height) {
-                const iframe = document.querySelector('iframe[src="http://localhost:3000"]');
-                if (iframe) {
-                    if(event.data.isActive == false) {
-                        setTimeout(function() {
+                if(event.data.deviceType == "pc") {
+                    const iframe = document.querySelector('iframe[src="http://localhost:3000?type=pc"]');
+                    if (iframe) {
+                        if(event.data.isActive == false) {
+                            setTimeout(function() {
+                                iframe.style.width = event.data.width;
+                                iframe.style.height = event.data.height;
+                            }, 200);
+                        } else {
                             iframe.style.width = event.data.width;
                             iframe.style.height = event.data.height;
-                        }, 200);
-                    } else {
-                        iframe.style.width = event.data.width;
-                        iframe.style.height = event.data.height;
+                        }
+                    }
+                }
+
+                if(event.data.deviceType == "sp") {
+                    const iframe = document.querySelector('iframe[src="http://localhost:3000?type=sp"]');
+                    if (iframe) {
+                        if(event.data.isActive == false) {
+                            setTimeout(function() {
+                                iframe.style.width = event.data.width;
+                                iframe.style.height = event.data.height;
+                            }, 200);
+                        } else {
+                            iframe.style.width = event.data.width;
+                            iframe.style.height = event.data.height;
+                        }
                     }
                 }
             }
