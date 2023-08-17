@@ -292,7 +292,7 @@ export default function Chat() {
                             <div className="mt-[5px] flex justify-between items-center">
                                 <Link href={"https://www.ueno.co.jp/soudan/ueno/"} target="_blank">
                                     <Image
-                                        className="cursor-pointer h-[50px] w-auto"
+                                        className="cursor-pointer h-[9.5vh] w-auto"
                                         src="/images/banner/01.png"
                                         width={135}
                                         height={80}
@@ -301,7 +301,7 @@ export default function Chat() {
                                 </Link>
                                 <div onClick={handleBannerClick}>
                                     <Image
-                                        className="cursor-pointer h-[50px] w-auto"
+                                        className="cursor-pointer h-[9.5vh] w-auto"
                                         src="/images/banner/02.png"
                                         width={160}
                                         height={80}
@@ -310,7 +310,7 @@ export default function Chat() {
                                 </div>
                                 <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
                                     <Image
-                                        className="cursor-pointer h-[50px] w-auto"
+                                        className="cursor-pointer h-[9.5vh] w-auto"
                                         src="/images/banner/03.png"
                                         width={125}
                                         height={80}
