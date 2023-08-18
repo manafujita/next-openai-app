@@ -21,8 +21,16 @@
             display: none;
         }
 
+        .tablet-iframe {
+            display: none;
+        }
+
         @media(max-width: 450px) {
             .pc-iframe {
+                display: none;
+            }
+
+            .tablet-iframe {
                 display: none;
             }
 
@@ -30,11 +38,26 @@
                 display: block;
             }
         }
+
+        @media(min-width: 451px) and (max-width: 961px) {
+            .pc-iframe {
+                display: none;
+            }
+
+            .tablet-iframe {
+                display: block;
+            }
+
+            .sp-iframe {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <iframe src="http://localhost:3000?type=pc" frameborder="0" class="pc-iframe"></iframe>
+    <iframe src="http://localhost:3000?type=tablet" frameborder="0" class="tablet-iframe"></iframe>
     <iframe src="http://localhost:3000?type=sp" frameborder="0" class="sp-iframe"></iframe>
 
     <script>
@@ -42,6 +65,21 @@
             if (event.data && event.data.width && event.data.height) {
                 if(event.data.deviceType == "pc") {
                     const iframe = document.querySelector('iframe[src="http://localhost:3000?type=pc"]');
+                    if (iframe) {
+                        if(event.data.isActive == false) {
+                            setTimeout(function() {
+                                iframe.style.width = event.data.width;
+                                iframe.style.height = event.data.height;
+                            }, 200);
+                        } else {
+                            iframe.style.width = event.data.width;
+                            iframe.style.height = event.data.height;
+                        }
+                    }
+                }
+
+                if(event.data.deviceType == "tablet") {
+                    const iframe = document.querySelector('iframe[src="http://localhost:3000?type=tablet"]');
                     if (iframe) {
                         if(event.data.isActive == false) {
                             setTimeout(function() {
