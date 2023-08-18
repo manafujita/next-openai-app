@@ -20,8 +20,6 @@ export default function Chat() {
         setIsAnimation(true);
     };
 
-    // console.log("window.parent.document.body.clientHeight");
-
     useEffect(() => {
         if (chatHistoryRef.current) {
             const element = chatHistoryRef.current;
@@ -223,7 +221,7 @@ export default function Chat() {
         return (
             <div>
                 <div
-                    className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
+                    className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] max-h-[90vh] overflow-y-auto bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
                         }`}
                 >
                     <div className="w-100 relative">
@@ -266,7 +264,7 @@ export default function Chat() {
                             </div>
                         </div>
                         <div
-                            className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] h-[40vh] overflow-y-auto border border-2"
+                            className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] min-h-[300px] h-[40vh] overflow-y-auto border border-2"
                             ref={chatHistoryRef}
                         >
                             <div className="max-w-[300px] bg-[#2E63A5] px-[15px] py-[10px] rounded-r-[10px] rounded-b-[10px] text-[13px] mb-[15px]">
@@ -310,13 +308,13 @@ export default function Chat() {
                             </div>
                         </div>
                         <div className="w-100 mt-[10px]">
-                            <p className="text-[15px]">
+                            <p className="text-[12px] tracking-tight">
                                 専門スタッフへの無料相談・無料カウンセリングはこちらから
                             </p>
                             <div className="mt-[5px] flex justify-between items-center">
                                 <Link href={"https://www.ueno.co.jp/soudan/ueno/"} target="_blank">
                                     <Image
-                                        className="cursor-pointer h-[9.5vh] w-auto"
+                                        className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
                                         src="/images/banner/01.png"
                                         width={135}
                                         height={80}
@@ -326,7 +324,7 @@ export default function Chat() {
                                 </Link>
                                 <div onClick={handleBannerClick}>
                                     <Image
-                                        className="cursor-pointer h-[9.5vh] w-auto"
+                                        className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
                                         src="/images/banner/02.png"
                                         width={160}
                                         height={80}
@@ -336,7 +334,7 @@ export default function Chat() {
                                 </div>
                                 <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
                                     <Image
-                                        className="cursor-pointer h-[9.5vh] w-auto"
+                                        className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
                                         src="/images/banner/03.png"
                                         width={125}
                                         height={80}
@@ -374,7 +372,7 @@ export default function Chat() {
                         <div className="fixed inset-0 z-10 overflow-y-auto">
                             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
-                                    <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                    <div className="bg-gray-50 px-4 py-3 flex flex-col sm:px-6">
                                         <div className="flex justify-center">
                                             <a href="tel:0120-965-982" className="flex justify-center text-sky-500">
                                                 <Image
@@ -403,7 +401,7 @@ export default function Chat() {
         return (
             <div>
                 <div
-                    className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] max-h-[40vh] overflow-y-auto bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
+                    className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
                         }`}
                 >
                     <div className="w-100 relative">
