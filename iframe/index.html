@@ -17,40 +17,8 @@
             overflow-y: auto;
         }
 
-        .sp-iframe {
+        .hide {
             display: none;
-        }
-
-        .tablet-iframe {
-            display: none;
-        }
-
-        @media(max-width: 450px) {
-            .pc-iframe {
-                display: none;
-            }
-
-            .tablet-iframe {
-                display: none;
-            }
-
-            .sp-iframe {
-                display: block;
-            }
-        }
-
-        @media(min-width: 451px) and (max-width: 961px) {
-            .pc-iframe {
-                display: none;
-            }
-
-            .tablet-iframe {
-                display: block;
-            }
-
-            .sp-iframe {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -60,14 +28,49 @@
     <iframe src="http://localhost:3000?type=tablet" frameborder="0" class="tablet-iframe"></iframe>
     <iframe src="http://localhost:3000?type=sp" frameborder="0" class="sp-iframe"></iframe>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://wurfl.io/wurfl.js"></script>
     <script>
+        function getDeviceType() {
+            if (WURFL.is_mobile) {
+                if (WURFL.form_factor === "Smartphone") {
+                    return 'SP';
+                } else if (WURFL.form_factor === "Tablet") {
+                    return 'Tablet';
+                }
+            }
+            return 'PC';
+        }
+
+        window.addEventListener('resize', function () {
+            deviceType = getDeviceType();
+        });
+
+        const deviceType = getDeviceType();
+
+        if(deviceType == "SP") {
+            $(".pc-iframe").addClass("hide");
+            $(".tablet-iframe").addClass("hide");
+        }
+
+        if(deviceType == "Tablet") {
+            $(".pc-iframe").addClass("hide");
+            $(".sp-iframe").addClass("hide");
+        }
+
+        if(deviceType == "PC") {
+            $(".tablet-iframe").addClass("hide");
+            $(".sp-iframe").addClass("hide");
+        }
+
+
         window.addEventListener("message", function (event) {
             if (event.data && event.data.width && event.data.height) {
-                if(event.data.deviceType == "pc") {
+                if (event.data.deviceType == "pc") {
                     const iframe = document.querySelector('iframe[src="http://localhost:3000?type=pc"]');
                     if (iframe) {
-                        if(event.data.isActive == false) {
-                            setTimeout(function() {
+                        if (event.data.isActive == false) {
+                            setTimeout(function () {
                                 iframe.style.width = event.data.width;
                                 iframe.style.height = event.data.height;
                             }, 200);
@@ -78,11 +81,11 @@
                     }
                 }
 
-                if(event.data.deviceType == "tablet") {
+                if (event.data.deviceType == "tablet") {
                     const iframe = document.querySelector('iframe[src="http://localhost:3000?type=tablet"]');
                     if (iframe) {
-                        if(event.data.isActive == false) {
-                            setTimeout(function() {
+                        if (event.data.isActive == false) {
+                            setTimeout(function () {
                                 iframe.style.width = event.data.width;
                                 iframe.style.height = event.data.height;
                             }, 200);
@@ -93,11 +96,11 @@
                     }
                 }
 
-                if(event.data.deviceType == "sp") {
+                if (event.data.deviceType == "sp") {
                     const iframe = document.querySelector('iframe[src="http://localhost:3000?type=sp"]');
                     if (iframe) {
-                        if(event.data.isActive == false) {
-                            setTimeout(function() {
+                        if (event.data.isActive == false) {
+                            setTimeout(function () {
                                 iframe.style.width = event.data.width;
                                 iframe.style.height = event.data.height;
                             }, 200);
