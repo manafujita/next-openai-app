@@ -374,7 +374,7 @@ export default function Chat() {
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                     <div className="bg-gray-50 px-4 py-3 flex flex-col sm:px-6">
                                         <div className="flex justify-center">
-                                            <a href="tel:0120-965-982" className="flex justify-center text-sky-500">
+                                            <a href="tel:0120965982" className="flex justify-center text-sky-500">
                                                 <Image
                                                     className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                     src="/images/icons/phone-solid.png"
@@ -554,7 +554,7 @@ export default function Chat() {
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                     <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                         <div className="flex justify-center">
-                                            <a href="tel:0120-965-982" className="flex justify-center text-sky-500">
+                                            <a href="tel:0120965982" className="flex justify-center text-sky-500">
                                                 <Image
                                                     className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                     src="/images/icons/phone-solid.png"
