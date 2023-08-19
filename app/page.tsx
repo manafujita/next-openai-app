@@ -325,7 +325,7 @@ export default function Chat() {
                                 <div onClick={handleBannerClick}>
                                     <Image
                                         className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
-                                        src="/images/banner/02.png"
+                                        src="/images/banner/02_SP.png"
                                         width={160}
                                         height={80}
                                         quality={100}
