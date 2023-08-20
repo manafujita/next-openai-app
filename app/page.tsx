@@ -65,6 +65,10 @@ export default function Chat() {
         }
     }
 
+    const handleCall = () => {
+        window.location.href = "tel:+0120965982";
+    }
+
 
     if (deviceType === "pc") {
         console.log();
@@ -374,7 +378,7 @@ export default function Chat() {
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                     <div className="bg-gray-50 px-4 py-3 flex flex-col sm:px-6">
                                         <div className="flex justify-center">
-                                            <a href="tel:0120965982" className="flex justify-center text-sky-500">
+                                            <div onClick={handleCall} className="flex justify-center text-sky-500">
                                                 <Image
                                                     className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                     src="/images/icons/phone-solid.png"
@@ -384,7 +388,7 @@ export default function Chat() {
                                                     alt="AIドクター うえの君"
                                                 />
                                                 発信 0120-965-982
-                                            </a>
+                                            </div>
                                         </div>
                                         <button type="button" onClick={() => setModalVisible(false)} className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">キャンセル</button>
                                     </div>
