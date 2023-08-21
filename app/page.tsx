@@ -70,11 +70,12 @@ export default function Chat() {
     }, [isActive]);
 
     const handleBannerClick = () => {
-        setModalVisible(true);
+        window.location.href = "tel:+0120965982";
+        // alert("asdasd");
     }
 
     const callTo = () => {
-        window.location.href = "tel:+0120965982";
+        window.location.href = "tel:0120-965-982";
     }
 
     if (deviceType === "pc") {
