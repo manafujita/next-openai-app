@@ -14,7 +14,7 @@ module.exports = {
       }
     },
     letterSpacing: {
-      tight: '-.5px',
+      tight: '2.5px',
     }
   },
   plugins: []
