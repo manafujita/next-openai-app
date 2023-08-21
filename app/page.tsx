@@ -70,10 +70,8 @@ export default function Chat() {
     }, [isActive]);
 
     const handleBannerClick = () => {
-        if (deviceType === "sp") {
-            // window.location.href = "tel:0120965982";
-            // alert("asdasd");
-        }
+        window.location.href = "tel:+0120965982";
+        // alert("asdasd");
     }
 
     const callTo = () => {
@@ -336,7 +334,7 @@ export default function Chat() {
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
-                                {/* <div onClick={handleBannerClick}>
+                                <div onClick={handleBannerClick}>
                                     <Image
                                         className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
                                         src="/images/banner/02_SP.png"
@@ -345,8 +343,7 @@ export default function Chat() {
                                         quality={100}
                                         alt="24時間無料電話相談　予約ダイヤル　0120-518-550"
                                     />
-                                </div> */}
-                                <a href="tel:0120965982">Call Us</a>
+                                </div>
                                 <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
                                     <Image
                                         className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
