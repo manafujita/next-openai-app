@@ -13,7 +13,9 @@ export default function Chat() {
     const [isAnimation, setIsAnimation] = useState(false);
     const { messages, input, handleInputChange, handleSubmit } = useChat();
     const [isModalVisible, setModalVisible] = useState(false);
-    const chatHistoryRef = useRef<HTMLDivElement>(null);
+    const chatHistoryRef_PC = useRef<HTMLDivElement>(null);
+    const chatHistoryRef_SP = useRef<HTMLDivElement>(null);
+    const chatHistoryRef_TB = useRef<HTMLDivElement>(null);
 
     const toggleClass = () => {
         setIsActive(!isActive);
@@ -21,11 +23,19 @@ export default function Chat() {
     };
 
     useEffect(() => {
-        if (chatHistoryRef.current) {
-            const element = chatHistoryRef.current;
+        if (chatHistoryRef_PC.current) {
+            const element = chatHistoryRef_PC.current;
             element.scrollTop = element.scrollHeight;
         }
-    }, [chatHistoryRef]);
+        if (chatHistoryRef_SP.current) {
+            const element = chatHistoryRef_SP.current;
+            element.scrollTop = element.scrollHeight;
+        }
+        if (chatHistoryRef_TB.current) {
+            const element = chatHistoryRef_TB.current;
+            element.scrollTop = element.scrollHeight;
+        }
+    });
 
     useEffect(() => {
         if (deviceType === "pc") {
@@ -64,11 +74,6 @@ export default function Chat() {
             setModalVisible(true);
         }
     }
-
-    const handleCall = () => {
-        window.location.href = "tel:0120965982";
-    }
-
 
     if (deviceType === "pc") {
         console.log();
@@ -119,7 +124,7 @@ export default function Chat() {
                         </div>
                         <div
                             className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] h-[40vh] overflow-y-auto border border-2"
-                            ref={chatHistoryRef}
+                            ref={chatHistoryRef_PC}
                         >
                             <div className="max-w-[300px] bg-[#2E63A5] px-[15px] py-[10px] rounded-r-[10px] rounded-b-[10px] text-[13px] mb-[15px]">
                                 AIドクター
@@ -269,7 +274,7 @@ export default function Chat() {
                         </div>
                         <div
                             className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] min-h-[300px] h-[40vh] overflow-y-auto border border-2"
-                            ref={chatHistoryRef}
+                            ref={chatHistoryRef_SP}
                         >
                             <div className="max-w-[300px] bg-[#2E63A5] px-[15px] py-[10px] rounded-r-[10px] rounded-b-[10px] text-[13px] mb-[15px]">
                                 AIドクター
@@ -378,7 +383,7 @@ export default function Chat() {
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                     <div className="bg-gray-50 px-4 py-3 flex flex-col sm:px-6">
                                         <div className="flex justify-center">
-                                            <div onClick={handleCall} className="flex justify-center text-sky-500 cursor-pointer">
+                                            <a href="tel:0120-965-982" className="flex justify-center text-sky-500 cursor-pointer">
                                                 <Image
                                                     className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                     src="/images/icons/phone-solid.png"
@@ -388,7 +393,7 @@ export default function Chat() {
                                                     alt="AIドクター うえの君"
                                                 />
                                                 発信 0120-965-982
-                                            </div>
+                                            </a>
                                         </div>
                                         <button type="button" onClick={() => setModalVisible(false)} className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">キャンセル</button>
                                     </div>
@@ -449,7 +454,7 @@ export default function Chat() {
                         </div>
                         <div
                             className="w-100 bg-white p-[15px] mt-[10px] rounded-[10px] h-[40vh] overflow-y-auto border border-2"
-                            ref={chatHistoryRef}
+                            ref={chatHistoryRef_TB}
                         >
                             <div className="max-w-[300px] bg-[#2E63A5] px-[15px] py-[10px] rounded-r-[10px] rounded-b-[10px] text-[13px] mb-[15px]">
                                 AIドクター
@@ -558,7 +563,7 @@ export default function Chat() {
                                 <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-full">
                                     <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                         <div className="flex justify-center">
-                                            <a href="tel:0120965982" className="flex justify-center text-sky-500">
+                                            <a href="tel:0120-965-982" className="flex justify-center text-sky-500">
                                                 <Image
                                                     className="me-[5px] w-[15px] h-[15px] mt-[5px]"
                                                     src="/images/icons/phone-solid.png"
