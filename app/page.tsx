@@ -70,8 +70,8 @@ export default function Chat() {
     }, [isActive]);
 
     const handleBannerClick = () => {
-        // window.location.href = "tel:+0120965982";
-        alert("asdasd");
+        window.location.href = "tel:0120965982";
+        // alert("asdasd");
     }
 
     const callTo = () => {
