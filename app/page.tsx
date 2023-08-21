@@ -71,7 +71,8 @@ export default function Chat() {
 
     const handleBannerClick = () => {
         if (deviceType === "sp") {
-            window.location.href = "tel:0120965982";
+            // window.location.href = "tel:0120965982";
+            alert("asdasd");
         }
     }
 
