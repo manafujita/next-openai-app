@@ -333,14 +333,14 @@ export default function Chat() {
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
-                                <a href="tel:+0120965982" target="_parent">
+                                <a href="tel:0120965982" target="_parent">
                                     <Image
                                         className="cursor-pointer min-h-[60px] h-[9.5vh] w-auto"
                                         src="/images/banner/02_SP.png"
                                         width={160}
                                         height={80}
                                         quality={100}
-                                        alt="24時間無料電話相談　予約ダイヤル　0120-518-550"
+                                        alt="24時間無料電話相談 予約ダイヤル 0120-965-982"
                                     />
                                 </a>
                                 <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
@@ -513,14 +513,14 @@ export default function Chat() {
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
-                                <a href="tel:+0120965982">
+                                <a href="tel:0120965982" target="_parent">
                                     <Image
                                         className="cursor-pointer h-[9.5vh] w-auto"
                                         src="/images/banner/02_SP.png"
                                         width={160}
                                         height={80}
                                         quality={100}
-                                        alt="24時間無料電話相談　予約ダイヤル　0120-518-550"
+                                        alt="24時間無料電話相談 予約ダイヤル 0120-965-982"
                                     />
                                 </a>
                                 <Link href={"https://www.ueno.co.jp/yoyaku/ueno/"} target="_blank">
