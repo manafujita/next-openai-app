@@ -513,7 +513,7 @@ export default function Chat() {
                                         alt="専門スタッフへ　メール相談　無料・２4時間以内返信"
                                     />
                                 </Link>
-                                <div onClick={handleBannerClick}>
+                                <div>
                                     <Image
                                         className="cursor-pointer h-[9.5vh] w-auto"
                                         src="/images/banner/02_SP.png"
