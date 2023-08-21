@@ -230,7 +230,7 @@ export default function Chat() {
         return (
             <div>
                 <div
-                    className={`fixed bottom-[0px] max-w-[100%] sm:max-w-[450px] max-h-[90vh] overflow-y-auto bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
+                    className={`fixed bottom-[0px] max-w-[100%] max-h-[90vh] overflow-y-auto bg-[#2E63A5] text-[#fff] px-[10px] py-[20px] rounded-[10px] chatdlg ${isActive ? "active" : ""
                         }`}
                 >
                     <div className="w-100 relative">
